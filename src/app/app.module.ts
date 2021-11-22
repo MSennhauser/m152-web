@@ -10,6 +10,7 @@ import { DayComponent } from './features/day/day.component';
 import { DayStepperComponent } from './features/day/day-stepper/day-stepper.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { FooterComponent } from './features/footer/footer.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './features/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

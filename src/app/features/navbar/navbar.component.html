@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+<!-- Main Toolbar -->
+<mat-toolbar color="primary">
+  <span>ePortfolio</span>
+  <div *ngIf="isHandset" fxLayoutAlign="end" fxFlex="100" fxLayoutGap="10px">
+    <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.toggle()" [hasBackdrop]="false">
+      <mat-sidenav-content>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+          (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-sidenav-content>
+
+      <!-- Material Sidenav -->
+      <mat-sidenav #sidenav fixedInViewport [mode]="'over'" [position]="'end'">
+        <mat-toolbar color="primary">
+          <span>Menu</span>
+          <div fxLayoutAlign="end center" fxFlex="100" fxLayoutGap="10px">
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+              (click)="sidenav.close()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar>
+        <!-- Navigation Buttons For Handset -->
+        <div fxLayout="row" style="padding-top: 60px;">
+          <div fxLayout="column" fxFlex="100" fxLayoutGap="30px">
+            <div fxLayout="row" fxLayoutAlign="center">
+              <button mat-flat-button color="accent" style="width: 66%;">Home</button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center">
+              <button mat-flat-button color="accent" style="width: 66%;">Tagesablauf</button>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  </div>
+  <!-- Navigation Buttons For Desktops -->
+  <div *ngIf="!isHandset" fxLayoutAlign="end" fxFlex="100" fxLayoutGap="10px">
+    <button mat-flat-button color="accent">Home</button>
+    <button mat-flat-button color="accent">Tagesablauf</button>
+  </div>
+
+</mat-toolbar>
