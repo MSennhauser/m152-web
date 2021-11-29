@@ -1,0 +1,14 @@
+@use '../../../themes.scss' as *;
+@use '@angular/material' as mat;
+
+
+.m152-home {
+    height: calc(100vh - 64px);
+    width: 100vw;
+    background-color: mat.get-color-from-palette($theme-accent, 'main');
+}
+
+h1{
+    color: white;
+    text-align: right;
+}
