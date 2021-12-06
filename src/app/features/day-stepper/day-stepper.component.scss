@@ -1,0 +1,16 @@
+.m152-day-stepper{
+    height: calc(100vh - 64px);
+    width: 100vw;
+}
+.m152-mat-stepper{
+    height: 100%;
+    ::ng-deep .mat-step{
+        height: 33%;
+        // .mat-step-header{
+        //     height: 100%;
+        // }
+        .mat-vertical-content-container{
+            height: 100%;
+        }
+    }
+}

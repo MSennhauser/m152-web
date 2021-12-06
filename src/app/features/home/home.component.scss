@@ -1,11 +1,11 @@
-@use '../../../themes.scss' as *;
+@use '../../../themes.scss' as m152;
 @use '@angular/material' as mat;
 
 
 .m152-home {
     height: calc(100vh - 64px);
     width: 100vw;
-    background-color: mat.get-color-from-palette($theme-accent, 'main');
+    background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
 }
 
 h1{
