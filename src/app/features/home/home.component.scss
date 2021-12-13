@@ -1,23 +1,21 @@
 @use '../../../themes.scss' as m152;
 @use '@angular/material' as mat;
 
-
 .m152-home {
     height: calc(100vh - 64px);
     width: 100vw;
     background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 0px;
     z-index: 1;
+    position: relative;
 }
 
 
-
 .m152-lea-logo{
-
-$m152-lea-size: 80vh;
-position: absolute;
-left: 10%;
-
+    $m152-lea-size: 80vh;
+    position: absolute;
+    top: calc(50% - 40vh);
+    left: 10%;
     ::ng-deep .mat-icon{
         opacity: 0.5;
         height: $m152-lea-size;
@@ -27,7 +25,8 @@ left: 10%;
     }
 }
 
-h1{
+.m152-title{
     color: white;
     text-align: right;
+    z-index: 2;
 }
