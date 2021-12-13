@@ -13,7 +13,8 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 0px;
 }
 
 .mat-drawer-container{

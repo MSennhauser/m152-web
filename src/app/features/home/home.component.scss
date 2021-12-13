@@ -6,6 +6,25 @@
     height: calc(100vh - 64px);
     width: 100vw;
     background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 0px;
+    z-index: 1;
+}
+
+
+
+.m152-lea-logo{
+
+$m152-lea-size: 80vh;
+position: absolute;
+left: 10%;
+
+    ::ng-deep .mat-icon{
+        opacity: 0.5;
+        height: $m152-lea-size;
+        width: $m152-lea-size;
+        font-size: $m152-lea-size;
+        line-height: $m152-lea-size;
+    }
 }
 
 h1{
