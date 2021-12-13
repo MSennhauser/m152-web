@@ -47,6 +47,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "/2021/inai4a/gruppe11/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -63,7 +64,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumError": "1000kb"
                 }
               ]
             }
