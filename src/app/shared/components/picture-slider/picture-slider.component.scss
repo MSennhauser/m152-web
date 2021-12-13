@@ -22,7 +22,12 @@ $m152-arrow-icon-size: 64px;
     display: flex;
     place-content: center;
     transition: .5s ease;
+    &:hover{
+        cursor: pointer;
+    }
     ::ng-deep .mat-icon{
+        position: absolute;
+        top: 50%;
         height: $m152-arrow-icon-size;
         width: $m152-arrow-icon-size;
         font-size: $m152-arrow-icon-size;

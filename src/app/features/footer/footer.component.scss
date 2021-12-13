@@ -1,0 +1,20 @@
+@use '../../../themes.scss' as m152;
+@use '@angular/material' as mat;
+
+
+.m152-footer{
+    background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
+    height: 64px;
+    padding: 0 64px 0 64px;
+    color: white;
+}
+
+.m152-footer-github{
+    cursor: pointer;
+}
+
+.m152-footer-github-logo{
+    $size: 24px;
+    height: $size;
+    width: $size;
+}

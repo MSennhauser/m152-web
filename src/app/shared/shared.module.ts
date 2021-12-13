@@ -1,5 +1,9 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { PictureSliderComponent } from './components/picture-slider/picture-slider.component';
@@ -7,12 +11,18 @@ import { M152VideoComponent } from './components/m152-video/m152-video.component
 
 @NgModule({
     imports: [
-        MaterialModule
+        MaterialModule,
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
     ],
     exports: [
         MaterialModule,
         FlexLayoutModule,
         HttpClientModule,
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
         PictureSliderComponent,
         M152VideoComponent
     ],

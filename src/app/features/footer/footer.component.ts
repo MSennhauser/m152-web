@@ -12,4 +12,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openGithubRepo(): void {
+    window.open('https://github.com/MSennhauser/m152-web', '_blank');
+  }
 }
