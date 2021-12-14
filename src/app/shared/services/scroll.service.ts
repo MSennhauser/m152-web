@@ -75,7 +75,7 @@ export class ScrollService {
   scrollToStep(step: ScrollActiveStep): void {
     const element = this._elementArray.find(scrollElement => scrollElement.step === step)?.element;
     if (element) {
-      element.scrollIntoView(true);
+      element.scrollIntoView(false);
     }
   }
 
