@@ -34,7 +34,6 @@ export class DayStepperComponent implements OnInit, AfterViewInit {
       });
 
     this.scrollService.currentActiveStep.subscribe((activeStep) => {
-      console.log(activeStep);
       switch (activeStep) {
         case ScrollActiveStep.Cozy:
           this.resetAllSteps();
