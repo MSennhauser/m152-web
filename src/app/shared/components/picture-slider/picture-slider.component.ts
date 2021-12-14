@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'm152-picture-slider',
@@ -11,19 +12,15 @@ export class PictureSliderComponent implements OnInit {
   @Input() srcOriginal: string;
   @Input() srcEdited: string;
 
-  currentImgSrc = '';
+  showEdited = true;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.currentImgSrc = this.srcEdited;
+    
   }
 
   changeImgSrc(): void {
-    if (this.currentImgSrc === this.srcEdited) {
-      this.currentImgSrc = this.srcOriginal;
-    } else {
-      this.currentImgSrc = this.srcEdited;
-    }
+   this.showEdited = !this.showEdited;
   }
 }

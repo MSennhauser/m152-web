@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'm152-youtube-video',
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YoutubeVideoComponent implements OnInit {
 
-  videoId = 'QdFlOnLm9E8';
-
-  constructor() { }
+  constructor(private scrollService: ScrollService,
+    private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+    this.scrollService.observeIsElementViewable(this.elementRef.nativeElement);
   }
 
 }

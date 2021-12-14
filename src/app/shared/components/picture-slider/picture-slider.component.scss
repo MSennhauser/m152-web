@@ -2,14 +2,13 @@ $m152-arrow-icon-size: 64px;
 
 .m152-image {
     max-width: 100%;
-    max-height: 100vh;
+    max-height: calc(100vh - 64px);
 }
 .m152-picture-slider-container{
     position: relative;
     width: 100%;
-    &:hover .m152-arrow{
-        opacity: 0.5;
-    }
+    height: 100%;
+    margin: 20px 20px 0 20px;
 }
 
 .m152-arrow{
@@ -24,6 +23,7 @@ $m152-arrow-icon-size: 64px;
     transition: .5s ease;
     &:hover{
         cursor: pointer;
+        opacity: 0.5;
     }
     ::ng-deep .mat-icon{
         position: absolute;

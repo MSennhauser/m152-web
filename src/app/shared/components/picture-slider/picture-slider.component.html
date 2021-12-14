@@ -1,9 +1,13 @@
 <div class="m152-picture-slider-container">
-    <div *ngIf="currentImgSrc === srcOriginal" class="m152-arrow m152-arrow-left" (click)="changeImgSrc()">
+    <div class="m152-arrow m152-arrow-left" (click)="changeImgSrc()">
         <mat-icon>chevron_left</mat-icon>
     </div>
-    <img [src]="currentImgSrc" class="m152-image" />
-    <div *ngIf="currentImgSrc === srcEdited" class="m152-arrow m152-arrow-right" (click)="changeImgSrc()">
+        
+    <img *ngIf="!showEdited" [src]="srcOriginal" class="m152-image" />
+
+    <img *ngIf="showEdited" [src]="srcEdited" class="m152-image" />
+        
+    <div class="m152-arrow m152-arrow-right" (click)="changeImgSrc()">
         <mat-icon>chevron_right</mat-icon>
     </div>
 </div>
