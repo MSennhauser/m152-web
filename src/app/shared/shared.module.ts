@@ -15,6 +15,7 @@ import { YoutubeVideoComponent } from './components/youtube-video/youtube-video.
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
+        FlexLayoutModule,
     ],
     exports: [
         MaterialModule,

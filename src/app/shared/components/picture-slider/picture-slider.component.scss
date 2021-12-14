@@ -7,8 +7,11 @@ $m152-arrow-icon-size: 64px;
 .m152-picture-slider-container{
     position: relative;
     width: 100%;
-    height: 100%;
-    margin: 20px 20px 0 20px;
+    height: calc(100vh - 64px);
+    padding: 0 20px 0 20px;
+}
+.m152-picture-slider-content{
+    position: relative;
 }
 
 .m152-arrow{

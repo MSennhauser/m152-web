@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { ScrollService } from '../../services/scroll.service';
+import { ScrollActiveStep, ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'm152-youtube-video',
@@ -12,7 +12,7 @@ export class YoutubeVideoComponent implements OnInit {
     private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    this.scrollService.observeIsElementViewable(this.elementRef.nativeElement);
+    this.scrollService.observeIsElementViewable(this.elementRef.nativeElement, ScrollActiveStep.Walking);
   }
 
 }

@@ -1,9 +1,10 @@
 .m152-ytplayer{
-    height: calc(100vh - 64px);
+    height: calc(75vw/16*9);
+    max-height: 100%;
     width: 75vw;
 }
 .m152-ytplayer-container{
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 64px);
     margin-left: 20px;
 }

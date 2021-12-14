@@ -1,12 +1,15 @@
-<div class="m152-day-stepper" fxLayoutAlign="end">
+<div class="m152-day-stepper" fxLayoutAlign="center">
     <mat-stepper orientation="vertical" [linear]="false" #stepper class="m152-mat-stepper">
-        <mat-step label="8:00 Uhr">
+        <mat-step label="8:00 Uhr" #cozy>
             step 8:00
         </mat-step>
-        <mat-step label="12:00 Uhr">
+        <mat-step label="11:00 Uhr" #playing>
             step 12:00
         </mat-step>
-        <mat-step label="20:00 Uhr">
+        <mat-step label="14:00 Uhr" #walking>
+            step 20:00
+        </mat-step>
+        <mat-step label="20:00 Uhr" #television>
             step 20:00
         </mat-step>
     </mat-stepper>

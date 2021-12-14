@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { ScrollService } from '../../services/scroll.service';
+import { ScrollActiveStep, ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'm152-picture-slider',
@@ -11,16 +11,18 @@ export class PictureSliderComponent implements OnInit {
 
   @Input() srcOriginal: string;
   @Input() srcEdited: string;
+  @Input() step: ScrollActiveStep;
 
   showEdited = true;
 
-  constructor() { }
+  constructor(private scrollService: ScrollService,
+    private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    
+    this.scrollService.observeIsElementViewable(this.elementRef.nativeElement, this.step);
   }
 
   changeImgSrc(): void {
-   this.showEdited = !this.showEdited;
+    this.showEdited = !this.showEdited;
   }
 }
