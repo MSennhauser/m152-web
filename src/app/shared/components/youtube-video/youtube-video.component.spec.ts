@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { M152VideoComponent } from './m152-video.component';
+import { YoutubeVideoComponent } from './youtube-video.component';
 
 describe('M152VideoComponent', () => {
-  let component: M152VideoComponent;
-  let fixture: ComponentFixture<M152VideoComponent>;
+  let component: YoutubeVideoComponent;
+  let fixture: ComponentFixture<YoutubeVideoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ M152VideoComponent ]
+      declarations: [ YoutubeVideoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(M152VideoComponent);
+    fixture = TestBed.createComponent(YoutubeVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

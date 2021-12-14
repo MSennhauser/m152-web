@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { PictureSliderComponent } from './components/picture-slider/picture-slider.component';
-import { M152VideoComponent } from './components/m152-video/m152-video.component';
+import { YoutubeVideoComponent } from './components/youtube-video/youtube-video.component';
 
 @NgModule({
     imports: [
@@ -24,11 +24,11 @@ import { M152VideoComponent } from './components/m152-video/m152-video.component
         BrowserModule,
         BrowserAnimationsModule,
         PictureSliderComponent,
-        M152VideoComponent
+        YoutubeVideoComponent
     ],
     declarations: [
         PictureSliderComponent,
-        M152VideoComponent
+        YoutubeVideoComponent
     ]
 })
 export class SharedModule { }
