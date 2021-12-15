@@ -1,19 +1,8 @@
 .m152-day-stepper{
-    height: calc(100vh - 64px);
     position: sticky;
-    top: 64px;
-}
-.m152-day-stepper-small{
-    height: 100%;
+    top: 104px;
 }
 .m152-mat-stepper{
-    // height: 75%;
-    // ::ng-deep .mat-step{
-    //     height: 33%;
-    //     .mat-vertical-content-container{
-    //         height: 50%;
-    //     }
-    // }
     ::ng-deep .mat-step-icon-content{
         opacity: 0;
     }

@@ -1,26 +1,26 @@
-<div ngClass.gt-sm="m152-day-stepper" ngClass.lt-md="m152-day-stepper-small" fxLayoutAlign="center">
+<div class="m152-day-stepper" fxLayoutAlign="center">
     <mat-stepper orientation="vertical" [linear]="false" #stepper class="m152-mat-stepper">
         <mat-step label="8:00 Uhr" #cozy>
-            step 8:00
             <m152-picture-slider *ngIf="isSmall" [srcEdited]="'assets/picture/lea-cozy-edited.jpg'"
                 [srcOriginal]="'assets/picture/lea-cozy-original.jpg'" [step]="0">
             </m152-picture-slider>
+            <p>Bis in den Tag hinein schläft Lea nur in ihrem Körbchen.</p>
         </mat-step>
         <mat-step label="11:00 Uhr" #playing>
-            step 12:00
             <m152-picture-slider *ngIf="isSmall" [srcEdited]="'assets/picture/lea-playing-edited.jpg'"
                 [srcOriginal]="'assets/picture/lea-playing-original.jpg'" [step]="1">
             </m152-picture-slider>
+            <p>Ist sie dann doch einmal aufgestanden, will sie Aufmerksamkeit.</p>
         </mat-step>
         <mat-step label="14:00 Uhr" #walking>
-            step 20:00
             <m152-youtube-video *ngIf="isSmall"></m152-youtube-video>
+            <p>Einer der drei Spaziergänge findet am Nachmittag statt.</p>
         </mat-step>
         <mat-step label="20:00 Uhr" #television>
-            step 20:00
             <m152-picture-slider *ngIf="isSmall" [srcEdited]="'assets/picture/lea-television-edited.jpg'"
                 [srcOriginal]="'assets/picture/lea-television-original.jpg'" [step]="3">
             </m152-picture-slider>
+            <p>Nach einem langen Tag vor dem Fernseher entspannen ist Leas Abendprogramm.</p>
         </mat-step>
     </mat-stepper>
 </div>

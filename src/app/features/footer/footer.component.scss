@@ -1,16 +1,17 @@
 @use '../../../themes.scss' as m152;
 @use '@angular/material' as mat;
 
-$footer-size: 182px;
-
 .m152-footer{
     background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
-    height: $footer-size;
+    height: 150px;
     padding: 0 5% 0 5%;
     color: white;
     font-size: 1.25em;
     p{
         margin: 0;
+    }
+    &-small{
+        font-size: 1em !important;
     }
 }
 
