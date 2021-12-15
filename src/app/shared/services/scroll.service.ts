@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { filter, map, takeUntil } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export enum ScrollActiveStep {
   Cozy = 0,
@@ -24,13 +25,26 @@ export class ScrollService {
   private currentElementShown: BehaviorSubject<ScrollElement[]> = new BehaviorSubject([]);
   private _currentActiveStep: BehaviorSubject<ScrollActiveStep> = new BehaviorSubject(ScrollActiveStep.Cozy);
 
+  isSmall = false;
 
-  constructor() {
+  private onDestroySubj: Subject<void> = new Subject();
+
+
+  constructor(private breakpointObserver: BreakpointObserver) {
     this.isScrolledIntoView();
+    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall])
+      .pipe(map(result => result.matches), takeUntil(this.onDestroySubj))
+      .subscribe((value) => {
+        this.isSmall = value;
+        window.dispatchEvent(new Event('scroll'));
+      });
   }
 
   private isScrolledIntoView(): void {
     window.addEventListener('scroll', () => {
+      if (this.isSmall) {
+        return;
+      }
       if (this._elementArray.length > 0) {
         let hasChanges = false;
         this._elementArray.forEach((scrollElement) => {
@@ -67,6 +81,9 @@ export class ScrollService {
     elementViewable
       .pipe(filter(value => value))
       .subscribe(() => {
+        if (this.isSmall) {
+          return;
+        }
         this._currentActiveStep.next(step);
       });
   }

@@ -9,6 +9,9 @@ $m152-arrow-icon-size: 64px;
     width: 100%;
     height: calc(100vh - 64px);
     padding: 0 20px 0 20px;
+    &-small{
+        height: 100%;
+    }
 }
 .m152-picture-slider-content{
     position: relative;

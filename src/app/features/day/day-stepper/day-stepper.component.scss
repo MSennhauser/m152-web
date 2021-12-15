@@ -3,14 +3,17 @@
     position: sticky;
     top: 64px;
 }
+.m152-day-stepper-small{
+    height: 100%;
+}
 .m152-mat-stepper{
-    height: 75%;
-    ::ng-deep .mat-step{
-        height: 33%;
-        .mat-vertical-content-container{
-            height: 50%;
-        }
-    }
+    // height: 75%;
+    // ::ng-deep .mat-step{
+    //     height: 33%;
+    //     .mat-vertical-content-container{
+    //         height: 50%;
+    //     }
+    // }
     ::ng-deep .mat-step-icon-content{
         opacity: 0;
     }

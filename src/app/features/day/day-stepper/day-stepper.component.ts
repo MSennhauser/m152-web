@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatStep, MatStepper } from '@angular/material/stepper';
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { ScrollActiveStep, ScrollService } from 'src/app/shared/services/scroll.
   templateUrl: './day-stepper.component.html',
   styleUrls: ['./day-stepper.component.scss']
 })
-export class DayStepperComponent implements OnInit, AfterViewInit {
+export class DayStepperComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('cozy', { static: true }) matStepCozy: MatStep;
   @ViewChild('playing', { static: true }) matStepPlaying: MatStep;
@@ -20,20 +20,22 @@ export class DayStepperComponent implements OnInit, AfterViewInit {
 
   matStepArray: MatStep[] = [];
 
-  isHandset = false;
+  isSmall = false;
+  isScrolling = false;
 
   private onDestroySubj: Subject<void> = new Subject();
 
   constructor(private breakpointObserver: BreakpointObserver, private scrollService: ScrollService) { }
 
   ngOnInit(): void {
-    this.breakpointObserver.observe(Breakpoints.Handset)
+    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall])
       .pipe(map(result => result.matches), takeUntil(this.onDestroySubj))
       .subscribe((value) => {
-        this.isHandset = value;
+        this.isSmall = value;
       });
 
     this.scrollService.currentActiveStep.subscribe((activeStep) => {
+      this.isScrolling = true;
       switch (activeStep) {
         case ScrollActiveStep.Cozy:
           this.resetAllSteps();
@@ -56,6 +58,7 @@ export class DayStepperComponent implements OnInit, AfterViewInit {
           this.matStepCozy.select();
           break;
       }
+      this.isScrolling = false;
     });
   }
 
@@ -67,6 +70,14 @@ export class DayStepperComponent implements OnInit, AfterViewInit {
       this.matStepTelevision
     ];
     this.matStepper.selectionChange.subscribe((value) => {
+      // skip if scrolling to prevent stuttering
+      if (this.isScrolling) {
+        return;
+      }
+      if (this.isSmall) {
+        this.resetAllSteps();
+        return;
+      }
       switch (value.selectedStep) {
         case this.matStepCozy:
           this.scrollService.scrollToStep(ScrollActiveStep.Cozy);
@@ -94,5 +105,10 @@ export class DayStepperComponent implements OnInit, AfterViewInit {
       step.completed = false;
       step.interacted = false;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroySubj.next();
+    this.onDestroySubj.complete();
   }
 }
