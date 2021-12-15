@@ -24,6 +24,19 @@
         line-height: $m152-lea-size;
     }
 }
+.m152-lea-logo-small{
+    $m152-lea-size: 80vw;
+    position: absolute;
+    top: calc(50% - 40vh);
+    left: 10%;
+    ::ng-deep .mat-icon{
+        opacity: 0.5;
+        height: $m152-lea-size;
+        width: $m152-lea-size;
+        font-size: $m152-lea-size;
+        line-height: $m152-lea-size;
+    }
+}
 
 .m152-title{
     color: white;

@@ -1,13 +1,18 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" class="m152-footer">
-    <p>Michael Sennhauser</p>
+<div fxLayout="column" class="m152-footer" fxLayoutAlign="space-around">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <p>Michael Sennhauser</p>
 
-    <p>M152 - Multimediainhalte in Webauftritt integrieren</p>
+        <p>M152 - Multimediainhalte in Webauftritt integrieren</p>
 
-    <div (click)="openGithubRepo()" class="m152-footer-github">
-        <div fxLayout="row" fxLayoutAlign="center">
-            <img src="assets/logo/m152-github-logo.png" class="m152-footer-github-logo">
+        <div (click)="openGithubRepo()" class="m152-footer-github">
+            <div fxLayout="row" fxLayoutAlign="center">
+                <img src="assets/logo/m152-github-logo.png" class="m152-footer-github-logo">
+            </div>
+            <p>Github</p>
         </div>
-        <p>Github</p>
-    </div>
 
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <p>© Copyright: Alle Logos, Bilder und Videos wurden von Michael Sennhauser erstellt.</p>
+    </div>
 </div>
