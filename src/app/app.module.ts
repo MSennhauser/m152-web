@@ -32,6 +32,6 @@ import { MatIconRegistry } from '@angular/material/icon';
 export class AppModule {
   constructor(matIconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     // Add logo to matIconRegistry
-    matIconRegistry.addSvgIcon('m152-logo', sanitizer.bypassSecurityTrustResourceUrl('assets/logo/m152-logo.svg'));
+    matIconRegistry.addSvgIcon('m152-logo', sanitizer.bypassSecurityTrustResourceUrl('assets/logo/m152-logo-plain.svg'));
   }
 }

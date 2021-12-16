@@ -27,7 +27,7 @@
 .m152-lea-logo-small{
     $m152-lea-size: 80vw;
     position: absolute;
-    top: calc(50% - 40vh);
+    top: calc(50% - 40vw);
     left: 10%;
     ::ng-deep .mat-icon{
         opacity: 0.5;
@@ -41,5 +41,11 @@
 .m152-title{
     color: white;
     text-align: right;
+    font-size: 6em;
+    font-weight: 600;
+    line-height: 1.25em;
     z-index: 2;
+    &-small{
+        font-size: 4em;
+    }
 }

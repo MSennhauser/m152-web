@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
-    this.breakpointObserver.observe(Breakpoints.Handset)
+    this.breakpointObserver.observe(Breakpoints.XSmall)
       .pipe(map(result => result.matches), takeUntil(this.onDestroySubj))
       .subscribe((value) => {
         this.isHandset = value;
