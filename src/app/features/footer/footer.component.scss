@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 
 .m152-footer{
-    background-color: mat.get-color-from-palette(m152.$theme-accent, 'main');
+    background-color: mat.get-color-from-palette(m152.$theme-accent, 'darker');
     height: 150px;
     padding: 0 5% 0 5%;
     color: white;
