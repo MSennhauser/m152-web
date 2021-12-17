@@ -25,10 +25,10 @@
         <div fxLayout="row" style="padding-top: 60px;">
           <div fxLayout="column" fxFlex="100" fxLayoutGap="30px">
             <div fxLayout="row" fxLayoutAlign="center">
-              <button mat-flat-button color="accent" style="width: 66%;">Home</button>
+              <button mat-flat-button color="accent" style="width: 66%;" [routerLink]="['/home']" fragment="home">Home</button>
             </div>
             <div fxLayout="row" fxLayoutAlign="center">
-              <button mat-flat-button color="accent" style="width: 66%;">Tagesablauf</button>
+              <button mat-flat-button color="accent" style="width: 66%;" [routerLink]="['/home']" fragment="day">Tagesablauf</button>
             </div>
           </div>
         </div>
@@ -37,8 +37,8 @@
   </div>
   <!-- Navigation Buttons For Desktops -->
   <div *ngIf="!isHandset" fxLayoutAlign="end" fxFlex="100" fxLayoutGap="10px">
-    <button mat-flat-button color="accent">Home</button>
-    <button mat-flat-button color="accent">Tagesablauf</button>
+    <button mat-flat-button color="accent" [routerLink]="['/home']" fragment="home">Home</button>
+    <button mat-flat-button color="accent" [routerLink]="['/home']" fragment="day">Tagesablauf</button>
   </div>
 
 </mat-toolbar>
